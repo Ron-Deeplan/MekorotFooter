@@ -1,0 +1,24 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "MekorotFooterWebPart",
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "MekorotFooterWebPart",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "mekorot-footer-web-part",
+    "libraryId": "1dd83a27-6a42-44ad-899d-b04abea1dc7b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "MekorotFooterWebPart description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

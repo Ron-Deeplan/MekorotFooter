@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/s-KaiNet/spfx-fast-serve/master/schema/config.latest.schema.json",
+  "cli": {
+    "isLibraryComponent": false
+  },
+  "serve": {
+    "openUrl": "https://mekorot.sharepoint.com/sites/Waternet-main/_layouts/workbench.aspx",
+    "fullScreenErrors": true,
+    "eslint": false,
+    "hotRefresh": false,
+    "reactProfiling": true
+  }
+}
