@@ -25,7 +25,7 @@ export default function MekorotFooterWebPart({ title, contactListId }: FooterCMP
       footerService.getContactCategoryOptions(contactListId).then((categories) => {
           setCategoryOptions(categories || []);
       })
-      window.innerWidth < 1400 ? setShowLogo(false) : setShowLogo(true);
+      window.innerWidth < 1450 ? setShowLogo(false) : setShowLogo(true);
   }, [])
 
   // Group contacts by category whenever contacts or categoryOptions change

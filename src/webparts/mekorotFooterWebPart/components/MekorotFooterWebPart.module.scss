@@ -1,19 +1,21 @@
 :root {
-    --itemCardGap : 0.69em;
-    --layoutPadding-L : 1.5em;
+    --itemCardGap : 1.5em;
+    // --itemCardGap : 0.69em;
+    --layoutPadding-L : 2.5em;
     --layoutPadding-M : 1em;
 }
 
 
 .footerCMPContainer {
-    width: calc(100% - 4em);
+    width: calc(100% - 6em);
     min-height: 16vh;
     background-color: #EEF3F980;
     display: flex;
     flex-direction: column;
-    padding: 1em 2em;
+    // padding: 1em 3em;
+    padding: 2em 3em;
     font-family: "Noto Sans Hebrew";
-    gap : 1em;
+    gap : 1.5em;
 }
 
 .FooterTitle {
@@ -41,13 +43,15 @@
     background-image : url('../assets/MekorotFooterLogo.svg');
     background-size : 100% 100%;
     background-repeat : no-repeat;
-    width : 10%;
+    // width : 10%;
+    width : 8.5%;
 }
 
 .ContactInfoSingleItem {
     flex : 1;
     display: flex;
-    gap : var(--itemCardGap);
+    justify-content: space-between;
+    // gap : var(--itemCardGap);
     min-width: 0;
 }
 
@@ -64,16 +68,20 @@
 
 .singleItemIconArea { 
     display : flex;
-    padding-top: 0.45em;
+    // padding-top: 0.45em;
+    padding-top: 0.38em;
 }
 
 .singleItemContentArea { 
-    flex: 1;
+    // flex: 1;
+    flex: 0 1 85%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap : 0.5em;
     min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 // .singleItemPhoneNumberArea {
@@ -86,10 +94,11 @@
 
 .singleItemPhoneNumberText{
     font-size: 0.8rem;
-    flex : 0 1 45%;
+    flex : 0 1 55%;
     font-weight: 500;
     color : #123541;
     font-family: "Noto Sans Hebrew";
+    cursor: pointer;
 }
 
 // .singleItemTitleArea {
@@ -105,17 +114,23 @@
     font-size: 0.8rem;
     font-weight: 400;
     font-family: 'Noto Sans Hebrew';
-    flex : 0 1 50%;
+    flex : 0 1 45%;
+    min-width: 0;
+    max-width: 100%;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .contactInfoArea{
     width: 100%;
+    max-width: 100%;
     display: flex;
-    flex : 1;
+    min-width: 0;
+    overflow: hidden;
+    // flex : 1;
 }
 
 .singleItemDisplayArea {
@@ -123,12 +138,17 @@
     flex-direction: column;
     flex : 1;
     line-height: 1.8rem;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .singleItemDisplay {
     display : flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    min-width: 0;
+    max-width: 100%;
 }
 
 @media (max-width : 1280px){
@@ -164,7 +184,7 @@
 
 @media (max-width : 1024px){
     .ContactInfo { 
-        gap : 1em 0em;
+        gap : 2em 0em;
         justify-content: flex-start;
     }
     .ContactInfoSingleItem{
@@ -177,6 +197,36 @@
         justify-content: space-between;
     }
     .ContactInfoSingleItem{
-        flex : 0 1 45%
+        flex : 0 1 48%
+    }
+    .singleItemContentArea{
+        flex : 0 1 80%;
+    }
+    .singleItemIconArea{
+        padding-top: 0.2em;
+    }
+}
+
+@media (max-width : 480px){
+    .categoryTitleText {
+        font-size: 1.1rem;
+    }
+    .singleItemTitleText{
+        font-size: 0.75rem;
+    }
+    .singleItemPhoneNumberText{
+        font-size: 0.75rem;
+    }
+    .singleItemIconArea{
+        margin-left: 0.5em;
+    }
+}
+
+@media (min-width: 1881px){
+    .singleItemPhoneNumberText{
+        flex : 0 1 65%;
+    }
+    .singleItemTitleText{
+        flex : 0 1 35%;
     }
 }
