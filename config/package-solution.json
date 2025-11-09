@@ -3,7 +3,7 @@
   "solution": {
     "name": "mekorot-footer-web-part-client-side-solution",
     "id": "1dd83a27-6a42-44ad-899d-b04abea1dc7b",
-    "version": "1.0.1.4",
+    "version": "1.0.1.5",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

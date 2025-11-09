@@ -64,6 +64,7 @@
     font-family : 'Noto Sans Hebrew';
     align-items: flex-end;
     color : #034EA2;
+    cursor: text;
 }
 
 .singleItemIconArea { 
@@ -84,14 +85,6 @@
     overflow: hidden;
 }
 
-// .singleItemPhoneNumberArea {
-//     flex : 0 1 45%;
-//     display:flex;
-//     flex-direction:column;
-//     align-items:flex-end;
-//     line-height: 1.8rem;
-// }
-
 .singleItemPhoneNumberText{
     font-size: 0.8rem;
     flex : 0 1 55%;
@@ -100,15 +93,6 @@
     font-family: "Noto Sans Hebrew";
     cursor: pointer;
 }
-
-// .singleItemTitleArea {
-//     flex : 0 1 55%;
-//     display:flex;
-//     min-width:0; // allow children to shrink for ellipsis
-//     flex-direction:column;
-//     align-items:flex-start;
-//     line-height: 1.8rem;
-// }
 
 .singleItemTitleText {
     font-size: 0.8rem;
@@ -121,7 +105,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
+    cursor : text;
 }
 
 .contactInfoArea{
@@ -228,5 +212,36 @@
     }
     .singleItemTitleText{
         flex : 0 1 35%;
+    }
+}
+
+.copyFeedback {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #034da2e1;
+    color: white;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans Hebrew';
+    z-index: 10000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    15%, 85% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
     }
 }

@@ -13,6 +13,7 @@ export default function MekorotFooterWebPart({ title, contactListId }: FooterCMP
   const [categoryOptions,setCategoryOptions] = useState<string[]>([])
   const [contactsByCategory, setContactsByCategory] = useState<Map<string, any[]>>(new Map());
   const [showLogo,setShowLogo] = useState<boolean>(false);
+  const [showCopyFeedback, setShowCopyFeedback] = useState<boolean>(false);
   const isMobile = window.innerWidth < 768;
 
 // data-automationid="SimpleFooter"
@@ -51,6 +52,28 @@ export default function MekorotFooterWebPart({ title, contactListId }: FooterCMP
       }
   }, [contacts, categoryOptions])
 
+  const handleCopyPhoneNumber = async (phoneNumber: string, event: React.MouseEvent) => {
+    event.preventDefault();
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+      setShowCopyFeedback(true);
+      setTimeout(() => setShowCopyFeedback(false), 2000);
+    } catch (err) {
+      // Fallback for older browsers that don't support Clipboard API
+      const textArea = document.createElement('textarea');
+      textArea.value = phoneNumber;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      // eslint-disable-next-line deprecation/deprecation
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setShowCopyFeedback(true);
+      setTimeout(() => setShowCopyFeedback(false), 2000);
+    }
+  };
+
   const singleCategoryRender = (category:string) =>{
     return(
       <div className={styles.ContactInfoSingleItem}>
@@ -74,7 +97,10 @@ export default function MekorotFooterWebPart({ title, contactListId }: FooterCMP
                                 <a href={`tel:${contact.phoneNumber}`} style={{textDecoration: 'none', color: '#123541'}}>{contact.phoneNumber}</a>
                             </span>
                             :
-                            <span className={styles.singleItemPhoneNumberText}>
+                            <span 
+                              className={styles.singleItemPhoneNumberText}
+                              onClick={(e) => handleCopyPhoneNumber(contact.phoneNumber, e)}
+                            >
                                 {contact.phoneNumber}
                             </span>
                             }
@@ -106,6 +132,11 @@ export default function MekorotFooterWebPart({ title, contactListId }: FooterCMP
                   </div>
                   {showLogo &&<div className={styles.LogoContainer}/>}
               </div>
+              {showCopyFeedback && (
+                <div className={styles.copyFeedback}>
+                  מספר הטלפון הועתק
+                </div>
+              )}
           {/* </div> */}
       </div>
   );
