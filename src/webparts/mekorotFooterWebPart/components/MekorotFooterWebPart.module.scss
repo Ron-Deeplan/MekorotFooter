@@ -1,95 +1,111 @@
 :root {
-    --itemCardGap : 1.5em;
+    --itemCardGap: 1.5em;
     // --itemCardGap : 0.69em;
-    --layoutPadding-L : 2.5em;
-    --layoutPadding-M : 1em;
+    --layoutPadding-L: 2.5em;
+    --layoutPadding-M: 1em;
 }
-
 
 .footerCMPContainer {
     width: calc(100% - 6em);
     min-height: 16vh;
-    background-color: #EEF3F980;
+    background-color: #eef3f980;
     display: flex;
     flex-direction: column;
     // padding: 1em 3em;
     padding: 2em 3em;
     font-family: "Noto Sans Hebrew";
-    gap : 1.5em;
+    gap: 1.5em;
 }
 
 .FooterTitle {
     font-size: 24px;
     height: 20%;
-    color : #394053;
+    color: #394053;
 }
 
 .ContactContainer {
-    flex : 1;
-    gap : var(--layoutPadding-L);
+    flex: 1;
+    gap: var(--layoutPadding-L);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .ContactInfo {
-    flex : 1;
+    flex: 1;
     display: flex;
-    gap : var(--layoutPadding-L);
+    gap: var(--layoutPadding-L);
     flex-wrap: wrap;
 }
 
-.LogoContainer {
-    background-image : url('../assets/MekorotFooterLogo.svg');
-    background-size : 100% 100%;
-    background-repeat : no-repeat;
-    // width : 10%;
-    width : 8.5%;
+.LogoVersionArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 8.5%;
+    gap: 20px;
+    .LogoContainer {
+        // background-image: url("../assets/MekorotFooterLogo.svg");
+        // background-size: 100% 100%;
+        // background-repeat: no-repeat;
+        width: 90%;
+        // width : 10%;
+    }
+    .waterNetVersion {
+        font-size: 12px;
+        color: #777777;
+        text-align: left;
+
+        @media (max-width: 1200px) {
+            font-size: 10px;
+        }
+    }
 }
 
 .ContactInfoSingleItem {
-    flex : 1;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     // gap : var(--itemCardGap);
     min-width: 0;
 }
 
-.categoryTitleText { 
+.categoryTitleText {
     width: 100%;
     display: flex;
-    text-align:center;
-    font-size : 1.25rem;
+    text-align: center;
+    font-size: 1.25rem;
     font-weight: 700;
-    font-family : 'Noto Sans Hebrew';
+    font-family: "Noto Sans Hebrew";
     align-items: flex-end;
-    color : #034EA2;
+    color: #034ea2;
     cursor: text;
 }
 
-.singleItemIconArea { 
-    display : flex;
+.singleItemIconArea {
+    display: flex;
     // padding-top: 0.45em;
     padding-top: 0.38em;
 }
 
-.singleItemContentArea { 
+.singleItemContentArea {
     // flex: 1;
     flex: 0 1 85%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap : 0.5em;
+    gap: 0.5em;
     min-width: 0;
     max-width: 100%;
     overflow: hidden;
 }
 
-.singleItemPhoneNumberText{
+.singleItemPhoneNumberText {
     font-size: 0.8rem;
-    flex : 0 1 55%;
+    flex: 0 1 55%;
     font-weight: 500;
-    color : #123541;
+    color: #123541;
     font-family: "Noto Sans Hebrew";
     cursor: pointer;
 }
@@ -97,18 +113,18 @@
 .singleItemTitleText {
     font-size: 0.8rem;
     font-weight: 400;
-    font-family: 'Noto Sans Hebrew';
-    flex : 0 1 45%;
+    font-family: "Noto Sans Hebrew";
+    flex: 0 1 45%;
     min-width: 0;
     max-width: 100%;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    cursor : text;
+    cursor: text;
 }
 
-.contactInfoArea{
+.contactInfoArea {
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -120,7 +136,7 @@
 .singleItemDisplayArea {
     display: flex;
     flex-direction: column;
-    flex : 1;
+    flex: 1;
     line-height: 1.8rem;
     min-width: 0;
     max-width: 100%;
@@ -128,90 +144,88 @@
 }
 
 .singleItemDisplay {
-    display : flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     min-width: 0;
     max-width: 100%;
 }
 
-@media (max-width : 1280px){
-
-    .ContactInfo{
+@media (max-width: 1280px) {
+    .ContactInfo {
         gap: 0.5em;
         justify-content: space-between;
     }
-    .singleItemContentArea{
+    .singleItemContentArea {
         line-height: 1.5rem;
     }
-    .singleItemDisplay{
+    .singleItemDisplay {
         flex-direction: column;
     }
-    .singleItemTitleText{
-        flex : 1
+    .singleItemTitleText {
+        flex: 1;
     }
-    .singleItemPhoneNumberText{
-        flex : 1
+    .singleItemPhoneNumberText {
+        flex: 1;
     }
 }
 
-@media (max-width : 1400px){
+@media (max-width: 1400px) {
     .ContactContainer {
-        gap : var(--layoutPadding-M);
+        gap: var(--layoutPadding-M);
     }
-    
+
     .ContactInfo {
-        gap : var(--layoutPadding-M);
+        gap: var(--layoutPadding-M);
     }
 }
 
-
-@media (max-width : 1024px){
-    .ContactInfo { 
-        gap : 2em 0em;
+@media (max-width: 1024px) {
+    .ContactInfo {
+        gap: 2em 0em;
         justify-content: flex-start;
     }
-    .ContactInfoSingleItem{
-        flex : 0 1 33.2%
+    .ContactInfoSingleItem {
+        flex: 0 1 33.2%;
     }
 }
 
-@media (max-width : 768px){
-    .ContactInfo { 
+@media (max-width: 768px) {
+    .ContactInfo {
         justify-content: space-between;
     }
-    .ContactInfoSingleItem{
-        flex : 0 1 48%
+    .ContactInfoSingleItem {
+        flex: 0 1 48%;
     }
-    .singleItemContentArea{
-        flex : 0 1 80%;
+    .singleItemContentArea {
+        flex: 0 1 80%;
     }
-    .singleItemIconArea{
+    .singleItemIconArea {
         padding-top: 0.2em;
     }
 }
 
-@media (max-width : 480px){
+@media (max-width: 480px) {
     .categoryTitleText {
         font-size: 1.1rem;
     }
-    .singleItemTitleText{
+    .singleItemTitleText {
         font-size: 0.75rem;
     }
-    .singleItemPhoneNumberText{
+    .singleItemPhoneNumberText {
         font-size: 0.75rem;
     }
-    .singleItemIconArea{
+    .singleItemIconArea {
         margin-left: 0.5em;
     }
 }
 
-@media (min-width: 1881px){
-    .singleItemPhoneNumberText{
-        flex : 0 1 65%;
+@media (min-width: 1881px) {
+    .singleItemPhoneNumberText {
+        flex: 0 1 65%;
     }
-    .singleItemTitleText{
-        flex : 0 1 35%;
+    .singleItemTitleText {
+        flex: 0 1 35%;
     }
 }
 
@@ -225,7 +239,7 @@
     padding: 0.75em 1.5em;
     border-radius: 4px;
     font-size: 0.9rem;
-    font-family: 'Noto Sans Hebrew';
+    font-family: "Noto Sans Hebrew";
     z-index: 10000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     animation: fadeInOut 2s ease-in-out;
@@ -236,7 +250,8 @@
         opacity: 0;
         transform: translateX(-50%) translateY(10px);
     }
-    15%, 85% {
+    15%,
+    85% {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
     }
